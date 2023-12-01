@@ -17,79 +17,101 @@ namespace WindowsFormsCalculator
             InitializeComponent();
         }
 
+        static bool firstInput = true;
+
         private void Button1(object sender, EventArgs e)
         {
-            Console.WriteLine("1");
+            if (firstInput)
+            {
+                Display.Text = "1";
+                firstInput = false;
+            }
+            else
+                Display.Text += "1";
         }
 
         private void Button2(object sender, EventArgs e)
         {
-            Console.WriteLine("2");
+            if (firstInput)
+            {
+                Display.Text = "2";
+                firstInput = false;
+            }
+            else
+                Display.Text += "2";
         }
 
         private void Button3(object sender, EventArgs e)
         {
-            Console.WriteLine("3");
+            if(firstInput)
+            {
+                Display.Text += "3";
+                firstInput = false;
+            }
+            else
+            Display.Text += "3";
         }
 
         private void Button4(object sender, EventArgs e)
         {
-            Console.WriteLine("4");
+            Display.Text += "4";
         }
 
         private void Button5(object sender, EventArgs e)
         {
-            Console.WriteLine("5");
+            Display.Text += "5";
         }
 
         private void Button6(object sender, EventArgs e)
         {
-            Console.WriteLine("6");
+            Display.Text += "6";
         }
 
         private void Button7(object sender, EventArgs e)
         {
-            Console.WriteLine("7");
+            Display.Text += "7";
         }
 
         private void Button8(object sender, EventArgs e)
         {
-            Console.WriteLine("8");
+            Display.Text += "8";
         }
 
         private void Button9(object sender, EventArgs e)
         {
-            Console.WriteLine("9");
+            Display.Text += "9";
         }
 
         private void Button0(object sender, EventArgs e)
         {
-            Console.WriteLine("0");
+            Display.Text += "0";
         }
 
         private void ButtonAddition(object sender, EventArgs e)
         {
-
+            Display.Text += "+";
         }
 
         private void ButtonSubtraction(object sender, EventArgs e)
         {
-
+            Display.Text += "-";
         }
 
         private void ButtonMultiplication(object sender, EventArgs e)
         {
-
+            Display.Text += "*";
         }
 
         private void ButtonDivision(object sender, EventArgs e)
         {
-
+            Display.Text += "/";
         }
 
         private void ButtonClear(object sender, EventArgs e)
         {
-
+            Display.Clear();
+            Display.Text = "0";
+            firstInput = true;
         }
 
         private void ButtonResult(object sender, EventArgs e)

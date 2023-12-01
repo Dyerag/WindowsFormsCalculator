@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Display = new System.Windows.Forms.TextBox();
             this.button16 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -47,23 +47,23 @@
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // Display
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(22, 13);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(327, 80);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "sfss";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Display.Enabled = false;
+            this.Display.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Display.Location = new System.Drawing.Point(22, 13);
+            this.Display.Multiline = true;
+            this.Display.Name = "Display";
+            this.Display.Size = new System.Drawing.Size(327, 80);
+            this.Display.TabIndex = 2;
+            this.Display.Text = "0";
+            this.Display.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // button16
             // 
             this.button16.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button16.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Location = new System.Drawing.Point(274, 319);
+            this.button16.Location = new System.Drawing.Point(274, 250);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(75, 63);
             this.button16.TabIndex = 32;
@@ -135,7 +135,7 @@
             // 
             this.button12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button12.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(274, 250);
+            this.button12.Location = new System.Drawing.Point(106, 388);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(75, 63);
             this.button12.TabIndex = 26;
@@ -256,7 +256,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(446, 404);
+            this.ClientSize = new System.Drawing.Size(446, 466);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button14);
@@ -273,7 +273,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Display);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -283,7 +283,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Display;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
