@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,6 +9,7 @@ namespace WindowsFormsCalculator
 {
     internal static class Input
     {
+        public static event EventHandler? ResetVariables;
         public static Double? Input1 { get; set; }
         public static Double? Input2 { get; set; }
         public static Operators? Operator { get; set; }
@@ -20,12 +22,12 @@ namespace WindowsFormsCalculator
             }
             set
             {
-
             }
         }
 
-        public static void Clear()
+        private static void OnFullCalculation()
         {
+            ResetVariables?.Invoke(FullCalculation,EventArgs.Empty);
             Input1 = null;
             Input2 = null;
             Operator = null;
