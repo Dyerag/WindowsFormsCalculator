@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,108 +16,127 @@ namespace WindowsFormsCalculator
         public Form1()
         {
             InitializeComponent();
-        }
 
-        static bool firstInput = true;
+        }
 
         private void Button1(object sender, EventArgs e)
         {
-            if (firstInput)
-            {
-                Display.Text = "1";
-                firstInput = false;
-            }
+            if (Output.Check())
+                Input.Text = "1";
             else
-                Display.Text += "1";
+                Input.Text += "1";
         }
 
         private void Button2(object sender, EventArgs e)
         {
-            if (firstInput)
-            {
-                Display.Text = "2";
-                firstInput = false;
-            }
+            if (Output.Check())
+                Input.Text = "2";
             else
-                Display.Text += "2";
+                Input.Text += "2";
         }
 
         private void Button3(object sender, EventArgs e)
         {
-            if(firstInput)
-            {
-                Display.Text += "3";
-                firstInput = false;
-            }
+            if (Output.Check())
+                Input.Text = "3";
             else
-            Display.Text += "3";
+                Input.Text += "3";
         }
 
         private void Button4(object sender, EventArgs e)
         {
-            Display.Text += "4";
+            if (Output.Check())
+                Input.Text = "4";
+            else
+                Input.Text += "4";
         }
 
         private void Button5(object sender, EventArgs e)
         {
-            Display.Text += "5";
+            if (Output.Check())
+                Input.Text = "5";
+            else
+                Input.Text += "5";
         }
 
         private void Button6(object sender, EventArgs e)
         {
-            Display.Text += "6";
+            if (Output.Check())
+                Input.Text = "6";
+            else
+                Input.Text += "6";
+
         }
 
         private void Button7(object sender, EventArgs e)
         {
-            Display.Text += "7";
+            if (Output.Check())
+                Input.Text = "7";
+            else
+                Input.Text += "7";
         }
 
         private void Button8(object sender, EventArgs e)
         {
-            Display.Text += "8";
+            if (Output.Check())
+                Input.Text = "8";
+            else
+                Input.Text += "8";
         }
 
         private void Button9(object sender, EventArgs e)
         {
-            Display.Text += "9";
+            if (Output.Check())
+                Input.Text = "9";
+            else
+                Input.Text += "9";
         }
 
         private void Button0(object sender, EventArgs e)
         {
-            Display.Text += "0";
+            if (Output.Check())
+                Input.Text = "0";
+            else
+                Input.Text += "0";
         }
 
         private void ButtonAddition(object sender, EventArgs e)
         {
-            Display.Text += "+";
+            if (Output.Check())
+                Input.Text = "+";
+            else
+                Input.Text += "+";
         }
 
         private void ButtonSubtraction(object sender, EventArgs e)
         {
-            Display.Text += "-";
+            if (Output.Check())
+                Input.Text = "1";
+            else
+                Input.Text += "-";
         }
 
         private void ButtonMultiplication(object sender, EventArgs e)
         {
-            Display.Text += "*";
+            Input.Text += "*";
         }
 
         private void ButtonDivision(object sender, EventArgs e)
         {
-            Display.Text += "/";
+            Input.Text += "/";
         }
 
         private void ButtonClear(object sender, EventArgs e)
         {
-            Display.Clear();
-            Display.Text = "0";
-            firstInput = true;
+            Input.Clear();
+            Input.Text = "0";
+            Output.FirstInput = true;
         }
 
         private void ButtonResult(object sender, EventArgs e)
         {
 
         }
+
     }
 }

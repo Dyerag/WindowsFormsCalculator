@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Display = new System.Windows.Forms.TextBox();
+            this.Input = new System.Windows.Forms.TextBox();
             this.button16 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -45,19 +45,21 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.Recent = new System.Windows.Forms.TextBox();
+            this.button17 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Display
+            // Input
             // 
-            this.Display.Enabled = false;
-            this.Display.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Display.Location = new System.Drawing.Point(22, 13);
-            this.Display.Multiline = true;
-            this.Display.Name = "Display";
-            this.Display.Size = new System.Drawing.Size(327, 80);
-            this.Display.TabIndex = 2;
-            this.Display.Text = "0";
-            this.Display.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Input.Enabled = false;
+            this.Input.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Input.Location = new System.Drawing.Point(22, 13);
+            this.Input.Multiline = true;
+            this.Input.Name = "Input";
+            this.Input.Size = new System.Drawing.Size(327, 80);
+            this.Input.TabIndex = 2;
+            this.Input.Text = "0";
+            this.Input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // button16
             // 
@@ -253,12 +255,37 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.ButtonAddition);
             // 
+            // Recent
+            // 
+            this.Recent.Enabled = false;
+            this.Recent.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Recent.Location = new System.Drawing.Point(358, 13);
+            this.Recent.Multiline = true;
+            this.Recent.Name = "Recent";
+            this.Recent.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.Recent.Size = new System.Drawing.Size(240, 438);
+            this.Recent.TabIndex = 33;
+            this.Recent.Text = "No recent Mathmatical events done";
+            // 
+            // button17
+            // 
+            this.button17.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button17.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.Location = new System.Drawing.Point(190, 388);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(75, 63);
+            this.button17.TabIndex = 34;
+            this.button17.Text = "9";
+            this.button17.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(446, 466);
+            this.ClientSize = new System.Drawing.Size(610, 466);
+            this.Controls.Add(this.button17);
+            this.Controls.Add(this.Recent);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button14);
@@ -275,7 +302,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.Display);
+            this.Controls.Add(this.Input);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -285,7 +312,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox Display;
+        private System.Windows.Forms.TextBox Input;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
@@ -302,6 +329,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox Recent;
+        private System.Windows.Forms.Button button17;
     }
 }
 
