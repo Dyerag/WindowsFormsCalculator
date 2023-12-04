@@ -6,17 +6,29 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WindowsFormsCalculator
 {
     public static class Output
     {
         private static bool firstInput = true;
-        private static Queue<string> recentList;
+        private static Queue<string> _RecentList;
 
-        internal static bool FirstInput { get => firstInput; set => firstInput = value; }
-        private static Queue<string> RecentList { get => recentList; set => recentList = value; }
-
+        public static bool FirstInput { get => firstInput; set => firstInput = value; }
+        public static Queue<string> RecentList
+        {
+            get
+            {
+                return _RecentList;
+            }
+            set
+            {
+                _RecentList = value;
+                if (RecentList.Count > 10)
+                    RecentList.Dequeue();
+            }
+        }
 
         /// <summary>
         /// checks if the display was recently cleared
@@ -31,18 +43,6 @@ namespace WindowsFormsCalculator
             }
             else
                 return value;
-        }
-
-        /// <summary>
-        /// Adds the most recent calculation, and deletes the oldest one when limit is hit
-        /// </summary>
-        /// <param name="calculation"></param>
-        public static void NewLastCalculation(String calculation)
-        {
-            RecentList.Enqueue(calculation);
-
-            if (RecentList.Count > 10)
-                RecentList.Dequeue();
         }
     }
 }

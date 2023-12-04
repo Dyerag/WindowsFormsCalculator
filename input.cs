@@ -6,18 +6,41 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsCalculator
 {
-    internal class Input
+    internal static class Input
     {
-        public Double? Input1 { get; set; }
-        public Double? Input2 { get; set; }
-        public Operators? Operator { get; set; }
+        public static Double? Input1 { get; set; }
+        public static Double? Input2 { get; set; }
+        public static Operators? Operator { get; set; }
+        public static string FullCalculation
+        {
+            get
+            {
 
+                return FullCalculation;
+            }
+            set
+            {
 
-        public void Clear()
+            }
+        }
+
+        public static void Clear()
         {
             Input1 = null;
             Input2 = null;
             Operator = null;
+            FullCalculation = null;
         }
+
+        public static void Addnumbers(string number, Operators Op)
+        {
+            if (Input1 == null)
+                Input1 = Convert.ToDouble(number);
+            else
+                Input2 = Convert.ToDouble(number);
+            if (Operator == null)
+                Operator = Op;
+        }
+
     }
 }

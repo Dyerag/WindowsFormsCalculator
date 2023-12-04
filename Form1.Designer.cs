@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Input = new System.Windows.Forms.TextBox();
+            this.Current = new System.Windows.Forms.TextBox();
             this.button16 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -49,17 +49,18 @@
             this.button17 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Input
+            // Current
             // 
-            this.Input.Enabled = false;
-            this.Input.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Input.Location = new System.Drawing.Point(22, 13);
-            this.Input.Multiline = true;
-            this.Input.Name = "Input";
-            this.Input.Size = new System.Drawing.Size(327, 80);
-            this.Input.TabIndex = 2;
-            this.Input.Text = "0";
-            this.Input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Current.Enabled = false;
+            this.Current.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Current.Location = new System.Drawing.Point(22, 13);
+            this.Current.Multiline = true;
+            this.Current.Name = "Current";
+            this.Current.Size = new System.Drawing.Size(327, 80);
+            this.Current.TabIndex = 2;
+            this.Current.Text = "0";
+            this.Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Current.TextChanged += new System.EventHandler(this.CurrentBox);
             // 
             // button16
             // 
@@ -266,6 +267,7 @@
             this.Recent.Size = new System.Drawing.Size(240, 438);
             this.Recent.TabIndex = 33;
             this.Recent.Text = "No recent Mathmatical events done";
+            this.Recent.TextChanged += new System.EventHandler(this.RecentBox);
             // 
             // button17
             // 
@@ -275,7 +277,7 @@
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(75, 63);
             this.button17.TabIndex = 34;
-            this.button17.Text = "9";
+            this.button17.Text = ",";
             this.button17.UseVisualStyleBackColor = true;
             // 
             // Form1
@@ -302,7 +304,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.Input);
+            this.Controls.Add(this.Current);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -312,7 +314,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox Input;
+        private System.Windows.Forms.TextBox Current;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;

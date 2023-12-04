@@ -22,121 +22,144 @@ namespace WindowsFormsCalculator
         private void Button1(object sender, EventArgs e)
         {
             if (Output.Check())
-                Input.Text = "1";
+                Current.Text = "1";
             else
-                Input.Text += "1";
+                Current.Text += "1";
         }
 
         private void Button2(object sender, EventArgs e)
         {
             if (Output.Check())
-                Input.Text = "2";
+                Current.Text = "2";
             else
-                Input.Text += "2";
+                Current.Text += "2";
         }
 
         private void Button3(object sender, EventArgs e)
         {
             if (Output.Check())
-                Input.Text = "3";
+                Current.Text = "3";
             else
-                Input.Text += "3";
+                Current.Text += "3";
         }
 
         private void Button4(object sender, EventArgs e)
         {
             if (Output.Check())
-                Input.Text = "4";
+                Current.Text = "4";
             else
-                Input.Text += "4";
+                Current.Text += "4";
         }
 
         private void Button5(object sender, EventArgs e)
         {
             if (Output.Check())
-                Input.Text = "5";
+                Current.Text = "5";
             else
-                Input.Text += "5";
+                Current.Text += "5";
         }
 
         private void Button6(object sender, EventArgs e)
         {
             if (Output.Check())
-                Input.Text = "6";
+                Current.Text = "6";
             else
-                Input.Text += "6";
+                Current.Text += "6";
 
         }
 
         private void Button7(object sender, EventArgs e)
         {
             if (Output.Check())
-                Input.Text = "7";
+                Current.Text = "7";
             else
-                Input.Text += "7";
+                Current.Text += "7";
         }
 
         private void Button8(object sender, EventArgs e)
         {
             if (Output.Check())
-                Input.Text = "8";
+                Current.Text = "8";
             else
-                Input.Text += "8";
+                Current.Text += "8";
         }
 
         private void Button9(object sender, EventArgs e)
         {
             if (Output.Check())
-                Input.Text = "9";
+                Current.Text = "9";
             else
-                Input.Text += "9";
+                Current.Text += "9";
         }
 
         private void Button0(object sender, EventArgs e)
         {
             if (Output.Check())
-                Input.Text = "0";
+                Current.Text = "0";
             else
-                Input.Text += "0";
+                Current.Text += "0";
         }
 
         private void ButtonAddition(object sender, EventArgs e)
         {
+            Input.Addnumbers(Current.Text,Operators.Addition);
+
             if (Output.Check())
-                Input.Text = "+";
+                Current.Text = "+";
             else
-                Input.Text += "+";
+                Current.Text += "+";
         }
 
         private void ButtonSubtraction(object sender, EventArgs e)
         {
+            Input.Addnumbers(Current.Text, Operators.Subtraction);
             if (Output.Check())
-                Input.Text = "1";
+                Current.Text = "-";
             else
-                Input.Text += "-";
+                Current.Text += "-";
         }
 
         private void ButtonMultiplication(object sender, EventArgs e)
         {
-            Input.Text += "*";
+            Input.Addnumbers(Current.Text, Operators.Multiplication);
+            Current.Text += "*";
         }
 
         private void ButtonDivision(object sender, EventArgs e)
         {
-            Input.Text += "/";
+            Input.Addnumbers(Current.Text, Operators.Division);
+            Current.Text += "/";
         }
 
         private void ButtonClear(object sender, EventArgs e)
         {
-            Input.Clear();
-            Input.Text = "0";
+            Current.Clear();
+            Current.Text = "0";
             Output.FirstInput = true;
         }
 
         private void ButtonResult(object sender, EventArgs e)
         {
-
+            Input.Clear();
+            Current.Clear();
+            Current.Text = "0";
+            Output.FirstInput = true;
         }
 
+        private void CurrentBox(object sender, EventArgs e)
+        {
+            Current.Multiline = true;
+            
+        }
+
+        private void RecentBox(object sender, EventArgs e)
+        {
+            Recent.Multiline = true;
+            Recent.Clear();
+            for (int i = 0; i <= Output.RecentList.Count; i++)
+            {
+                
+            }
+        }
     }
 }
