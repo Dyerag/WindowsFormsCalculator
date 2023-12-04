@@ -63,9 +63,9 @@
             // 
             this.button16.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button16.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Location = new System.Drawing.Point(274, 250);
+            this.button16.Location = new System.Drawing.Point(274, 319);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 63);
+            this.button16.Size = new System.Drawing.Size(75, 132);
             this.button16.TabIndex = 32;
             this.button16.Text = "=";
             this.button16.UseVisualStyleBackColor = true;
@@ -125,7 +125,7 @@
             this.button11.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.Location = new System.Drawing.Point(274, 181);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 63);
+            this.button11.Size = new System.Drawing.Size(75, 132);
             this.button11.TabIndex = 27;
             this.button11.Text = "C";
             this.button11.UseVisualStyleBackColor = true;
@@ -135,11 +135,13 @@
             // 
             this.button12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button12.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(106, 388);
+            this.button12.Location = new System.Drawing.Point(22, 388);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 63);
+            this.button12.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.button12.Size = new System.Drawing.Size(159, 63);
             this.button12.TabIndex = 26;
             this.button12.Text = "0";
+            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.Button0);
             // 
