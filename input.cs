@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,40 +10,32 @@ namespace WindowsFormsCalculator
 {
     internal static class Input
     {
-        public static event EventHandler? ResetVariables;
         public static Double? Input1 { get; set; }
         public static Double? Input2 { get; set; }
         public static Operators? Operator { get; set; }
-        public static string FullCalculation
-        {
-            get
-            {
 
-                return FullCalculation;
-            }
-            set
-            {
-            }
-        }
-
-        private static void OnFullCalculation()
+        /// <summary>
+        /// Empties the class variables after use
+        /// </summary>
+        public static void Clear()
         {
-            ResetVariables?.Invoke(FullCalculation,EventArgs.Empty);
             Input1 = null;
             Input2 = null;
             Operator = null;
-            FullCalculation = null;
         }
 
-        public static void Addnumbers(string number, Operators Op)
+        public static void AddNumbers(string number)
         {
             if (Input1 == null)
                 Input1 = Convert.ToDouble(number);
-            else
-                Input2 = Convert.ToDouble(number);
+            else if(Input2 == null)
+                Input2 = Convert.ToDouble(number); 
+        }
+
+        public static void AddOperator(Operators Op)
+        {
             if (Operator == null)
                 Operator = Op;
         }
-
     }
 }

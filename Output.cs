@@ -31,7 +31,7 @@ namespace WindowsFormsCalculator
         }
 
         /// <summary>
-        /// checks if the display was recently cleared
+        /// Checks if the display was recently cleared
         /// </summary>
         public static bool Check()
         {
@@ -43,6 +43,12 @@ namespace WindowsFormsCalculator
             }
             else
                 return value;
+        }
+
+        public static void AddToRecentList(string addition)
+        {
+            Queue<string> list = new Queue<string>(new[] {addition});
+            RecentList = list;
         }
     }
 }
