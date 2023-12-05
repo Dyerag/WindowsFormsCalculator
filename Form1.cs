@@ -224,11 +224,10 @@ namespace WindowsFormsCalculator
 
             if (Input.Operator != null && Input.Input1 != 0 && Input.Input2 != null)
             {
-                Output.RecentList = Convert.ChangeType(CurrentDisplay.Text, Queue<string>);
+                //Output.RecentList = Convert.ChangeType(CurrentDisplay.Text, Queue<string>);
                 //string intermediate = Current.Text;
                 //Output.RecentList = intermediate;
-                //Output.AddToRecentList(Current.Text);
-                
+                Output.AddToRecentList(CurrentDisplay.Text);
             }
         }
         #endregion
