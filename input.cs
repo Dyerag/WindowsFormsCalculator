@@ -10,8 +10,8 @@ namespace WindowsFormsCalculator
 {
     internal static class Input
     {
-        public static Double? Input1 { get; set; }
-        public static Double? Input2 { get; set; }
+        public static double? Input1 { get; set; }
+        public static double? Input2 { get; set; }
         public static Operators? Operator { get; set; }
 
         /// <summary>
@@ -24,6 +24,10 @@ namespace WindowsFormsCalculator
             Operator = null;
         }
 
+        /// <summary>
+        /// Adds the values on the CurrentDisplay to variables for use in calculations
+        /// </summary>
+        /// <param name="number"></param>
         public static void AddNumbers(string number)
         {
             if (Input1 == null)

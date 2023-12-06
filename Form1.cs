@@ -211,35 +211,45 @@ namespace WindowsFormsCalculator
             Input.Clear();
         }
 
+        /// <summary>
+        /// Adds the Values to the variables used in the formula, and adds all of it to the list of recently made math
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonResult(object sender, EventArgs e)
         {
+            #region Formula
             char? separator = Formulas.SplitSeparator();
             if (separator != null)
             {
                 Input.AddNumbers(CurrentDisplay.Text.Split((char)separator)[0].Trim());
                 Input.AddNumbers(CurrentDisplay.Text.Split((char)separator)[1].Trim());
             }
+            #endregion
 
             CurrentDisplay.Text += " = " + Formulas.Formula();
 
-            if (Input.Operator != null && Input.Input1 != 0 && Input.Input2 != null)
+            // After the result is written and displayed, everything in the CurrentDisplay is put in the list of prior made equations using this if.
+            // This is an if statement, to prevent an adding incomplete equations to the list.
+            if (Input.Operator != null && Input.Input1 != null && Input.Input2 != null)
             {
-                //Output.RecentList = Convert.ChangeType(CurrentDisplay.Text, Queue<string>);
-                Queue<string> middlestep = new Queue<string>(new[] {CurrentDisplay.Text});
+                // CurrentDisplay content must be put in a queue, lest it not be allowed to enter the property
+                Queue<string> middlestep = new Queue<string>(new[] { CurrentDisplay.Text });
                 Output.RecentList = middlestep;
-                //string intermediate = Current.Text;
-                //Output.RecentList = intermediate;
-                //Output.AddToRecentList(CurrentDisplay.Text);
             }
         }
         #endregion
 
-        private void RecentDisplay_TextChanged(object sender, EventArgs e)
+        private void RecentDisplayUpdate(object sender, EventArgs e)
         {
-            string toBeDisplayed = "";
-            foreach (string item in Output.RecentList)
-                toBeDisplayed += item;
-            RecentDisplay.Text = toBeDisplayed;
+            //string toBeDisplayed = "";
+            //foreach (string item in Output.RecentList)
+            //    toBeDisplayed += "."+item;
+            //RecentDisplay.Text = toBeDisplayed;
+            var localList = Output.RecentList;
+
+            if (localList.Count > 0)
+            RecentDisplay.Text += localList.Dequeue();
         }
     }
 }

@@ -25,8 +25,8 @@ namespace WindowsFormsCalculator
             set
             {
                 _RecentList.Enqueue(value.Dequeue());
-                if (RecentList.Count > 10)
-                    RecentList.Dequeue();
+                if (_RecentList.Count > 10)
+                    _RecentList.Dequeue();
             }
         }
 
@@ -44,11 +44,5 @@ namespace WindowsFormsCalculator
             else
                 return value;
         }
-
-        //public static void AddToRecentList(string addition)
-        //{
-        //    Queue<string> list = new Queue<string>(new[] { addition });
-        //    RecentList = list;
-        //}
     }
 }
