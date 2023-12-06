@@ -13,7 +13,7 @@ namespace WindowsFormsCalculator
     public static class Output
     {
         private static bool firstInput = true;
-        private static Queue<string> _RecentList;
+        private static Queue<string> _RecentList = new Queue<string>();
 
         public static bool FirstInput { get => firstInput; set => firstInput = value; }
         public static Queue<string> RecentList
@@ -24,7 +24,7 @@ namespace WindowsFormsCalculator
             }
             set
             {
-                _RecentList = value;
+                _RecentList.Enqueue(value.Dequeue());
                 if (RecentList.Count > 10)
                     RecentList.Dequeue();
             }
@@ -45,10 +45,10 @@ namespace WindowsFormsCalculator
                 return value;
         }
 
-        public static void AddToRecentList(string addition)
-        {
-            Queue<string> list = new Queue<string>(new[] {addition});
-            RecentList = list;
-        }
+        //public static void AddToRecentList(string addition)
+        //{
+        //    Queue<string> list = new Queue<string>(new[] { addition });
+        //    RecentList = list;
+        //}
     }
 }

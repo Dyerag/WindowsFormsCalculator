@@ -225,17 +225,21 @@ namespace WindowsFormsCalculator
             if (Input.Operator != null && Input.Input1 != 0 && Input.Input2 != null)
             {
                 //Output.RecentList = Convert.ChangeType(CurrentDisplay.Text, Queue<string>);
+                Queue<string> middlestep = new Queue<string>(new[] {CurrentDisplay.Text});
+                Output.RecentList = middlestep;
                 //string intermediate = Current.Text;
                 //Output.RecentList = intermediate;
-                Output.AddToRecentList(CurrentDisplay.Text);
+                //Output.AddToRecentList(CurrentDisplay.Text);
             }
         }
         #endregion
 
         private void RecentDisplay_TextChanged(object sender, EventArgs e)
         {
+            string toBeDisplayed = "";
             foreach (string item in Output.RecentList)
-                RecentDisplay.Text += item;
+                toBeDisplayed += item;
+            RecentDisplay.Text = toBeDisplayed;
         }
     }
 }
