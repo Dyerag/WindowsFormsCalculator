@@ -19,6 +19,7 @@ namespace WindowsFormsCalculator
         private static Queue<string> _RecentList = new Queue<string>();
 
         public static bool FirstInput { get => firstInput; set => firstInput = value; }
+       
         public static Queue<string> RecentList
         {
             get

@@ -71,7 +71,7 @@
             this.button16.TabIndex = 32;
             this.button16.Text = "=";
             this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.ButtonResult);
+            this.button16.Click += new System.EventHandler(this.ResultButton);
             // 
             // button13
             // 
@@ -119,7 +119,7 @@
             this.button10.TabIndex = 28;
             this.button10.Text = "/";
             this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.ButtonDivision);
+            this.button10.Click += new System.EventHandler(this.DivisionButton);
             // 
             // button11
             // 
@@ -131,7 +131,7 @@
             this.button11.TabIndex = 27;
             this.button11.Text = "C";
             this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.ButtonClear);
+            this.button11.Click += new System.EventHandler(this.ClearButton);
             // 
             // button12
             // 
@@ -157,7 +157,7 @@
             this.button9.TabIndex = 25;
             this.button9.Text = "-";
             this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.ButtonSubtraction);
+            this.button9.Click += new System.EventHandler(this.SubtractionButton);
             // 
             // button8
             // 
@@ -169,7 +169,7 @@
             this.button8.TabIndex = 24;
             this.button8.Text = "*";
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.ButtonMultiplication);
+            this.button8.Click += new System.EventHandler(this.MultiplicationButton);
             // 
             // button7
             // 
@@ -253,7 +253,7 @@
             this.button1.TabIndex = 17;
             this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.ButtonAddition);
+            this.button1.Click += new System.EventHandler(this.AdditionButton);
             // 
             // RecentDisplay
             // 
@@ -262,11 +262,9 @@
             this.RecentDisplay.Location = new System.Drawing.Point(358, 13);
             this.RecentDisplay.Multiline = true;
             this.RecentDisplay.Name = "RecentDisplay";
-            this.RecentDisplay.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.RecentDisplay.Size = new System.Drawing.Size(240, 438);
             this.RecentDisplay.TabIndex = 33;
             this.RecentDisplay.Text = "No recent Mathmatical events done";
-            this.RecentDisplay.TextChanged += new System.EventHandler(this.RecentDisplayUpdate);
             // 
             // button17
             // 
@@ -278,6 +276,7 @@
             this.button17.TabIndex = 34;
             this.button17.Text = ",";
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.CommaButton);
             // 
             // Form1
             // 

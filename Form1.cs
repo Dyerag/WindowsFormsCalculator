@@ -124,7 +124,7 @@ namespace WindowsFormsCalculator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonAddition(object sender, EventArgs e)
+        private void AdditionButton(object sender, EventArgs e)
         {
             // When it's the first input
             if (Output.Check())
@@ -145,7 +145,7 @@ namespace WindowsFormsCalculator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonSubtraction(object sender, EventArgs e)
+        private void SubtractionButton(object sender, EventArgs e)
         {
             // When it's the first input
             if (Output.Check())
@@ -167,7 +167,7 @@ namespace WindowsFormsCalculator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonMultiplication(object sender, EventArgs e)
+        private void MultiplicationButton(object sender, EventArgs e)
         {
             //when an operator hasn't been picked
             if (Input.Operator == null)
@@ -185,7 +185,7 @@ namespace WindowsFormsCalculator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonDivision(object sender, EventArgs e)
+        private void DivisionButton(object sender, EventArgs e)
         {
             //when an operator hasn't been picked
             if (Input.Operator == null)
@@ -196,16 +196,17 @@ namespace WindowsFormsCalculator
         }
         #endregion
 
-        #region Clear and Equal
+        #region Clear, Equal, and comma
 
         /// <summary>
         /// The clear button. Used to empty The CurrentDisplay, input variables and RecentDisplay
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonClear(object sender, EventArgs e)
+        private void ClearButton(object sender, EventArgs e)
         {
             RecentDisplay.Clear();
+            RecentDisplayUpdate();
             CurrentDisplay.Clear();
             CurrentDisplay.Text = "0";
             Output.FirstInput = true;
@@ -217,7 +218,7 @@ namespace WindowsFormsCalculator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonResult(object sender, EventArgs e)
+        private void ResultButton(object sender, EventArgs e)
         {
             #region Formula
             char? separator = Formulas.SplitSeparator();
@@ -239,14 +240,32 @@ namespace WindowsFormsCalculator
                 Output.RecentList = middlestep;
             }
         }
+
+        private void CommaButton(object sender, EventArgs e)
+        {
+            //switch(Input.Operator == null)
+
+            if (Input.Operator ==null )
+            {
+                if (!CurrentDisplay.Text.Contains(","))
+                    CurrentDisplay.Text += ",";
+            }
+            else if (!CurrentDisplay.Text.Split((char)Formulas.SplitSeparator())[1].Contains(","))
+            {
+                if (int.TryParse(CurrentDisplay.Text[CurrentDisplay.Text.Length - 1].ToString(), out _))
+                    CurrentDisplay.Text += "0,";
+                else
+                    CurrentDisplay.Text += ",";
+            }
+        }
         #endregion
 
-        private void RecentDisplayUpdate(object sender, EventArgs e)
+        public void RecentDisplayUpdate()
         {
-            var localList = new Queue<string> (Output.RecentList);
+            var localList = new Queue<string>(Output.RecentList);
 
             while (localList.Count > 0)
-                RecentDisplay.Text += localList.Dequeue();
+                RecentDisplay.Text += localList.Dequeue() + Environment.NewLine;
         }
     }
 }
