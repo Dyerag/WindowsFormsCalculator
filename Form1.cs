@@ -243,7 +243,7 @@ namespace WindowsFormsCalculator
 
         private void CommaButton(object sender, EventArgs e)
         {
-            //switch(Input.Operator == null)
+            
 
             if (Input.Operator ==null )
             {
