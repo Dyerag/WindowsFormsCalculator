@@ -56,6 +56,7 @@
             this.CurrentDisplay.Location = new System.Drawing.Point(22, 13);
             this.CurrentDisplay.Multiline = true;
             this.CurrentDisplay.Name = "CurrentDisplay";
+            this.CurrentDisplay.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.CurrentDisplay.Size = new System.Drawing.Size(327, 80);
             this.CurrentDisplay.TabIndex = 2;
             this.CurrentDisplay.Text = "0";

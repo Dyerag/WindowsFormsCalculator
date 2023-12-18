@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -242,14 +243,10 @@ namespace WindowsFormsCalculator
 
         private void RecentDisplayUpdate(object sender, EventArgs e)
         {
-            //string toBeDisplayed = "";
-            //foreach (string item in Output.RecentList)
-            //    toBeDisplayed += "."+item;
-            //RecentDisplay.Text = toBeDisplayed;
-            var localList = Output.RecentList;
+            var localList = new Queue<string> (Output.RecentList);
 
-            if (localList.Count > 0)
-            RecentDisplay.Text += localList.Dequeue();
+            while (localList.Count > 0)
+                RecentDisplay.Text += localList.Dequeue();
         }
     }
 }
