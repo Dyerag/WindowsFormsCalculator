@@ -243,11 +243,11 @@ namespace WindowsFormsCalculator
 
         private void CommaButton(object sender, EventArgs e)
         {
-            
 
-            if (Input.Operator ==null )
+
+            if (Input.Operator == null)
             {
-                if (!CurrentDisplay.Text.Contains(","))
+                if (!CurrentDisplay.Text.Contains(",") || Output.Check() == true)
                     CurrentDisplay.Text += ",";
             }
             else if (!CurrentDisplay.Text.Split((char)Formulas.SplitSeparator())[1].Contains(","))
