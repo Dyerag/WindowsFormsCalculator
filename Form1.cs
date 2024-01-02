@@ -244,8 +244,12 @@ namespace WindowsFormsCalculator
         {
             if (Input.Operator == null)
             {
-                if (!CurrentDisplay.Text.Contains(",") && Output.Check() == true)
+                if (!CurrentDisplay.Text.Contains(","))
+                {
+                    _ = Output.Check();
                     CurrentDisplay.Text += ",";
+                }
+                
             }
             else if (!CurrentDisplay.Text.Split((char)Formulas.SplitSeparator())[1].Contains(","))
             {
