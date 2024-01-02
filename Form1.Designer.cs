@@ -264,7 +264,8 @@
             this.RecentDisplay.Name = "RecentDisplay";
             this.RecentDisplay.Size = new System.Drawing.Size(240, 438);
             this.RecentDisplay.TabIndex = 33;
-            this.RecentDisplay.Text = "No recent Mathmatical events done";
+            this.RecentDisplay.Text = "No recent mathmatical events done";
+            this.RecentDisplay.TextChanged += new System.EventHandler(this.RecentDisplayEmpty);
             // 
             // button17
             // 

@@ -205,7 +205,6 @@ namespace WindowsFormsCalculator
         /// <param name="e"></param>
         private void ClearButton(object sender, EventArgs e)
         {
-            RecentDisplay.Clear();
             RecentDisplayUpdate();
             CurrentDisplay.Clear();
             CurrentDisplay.Text = "0";
@@ -243,11 +242,9 @@ namespace WindowsFormsCalculator
 
         private void CommaButton(object sender, EventArgs e)
         {
-
-
             if (Input.Operator == null)
             {
-                if (!CurrentDisplay.Text.Contains(",") || Output.Check() == true)
+                if (!CurrentDisplay.Text.Contains(",") && Output.Check() == true)
                     CurrentDisplay.Text += ",";
             }
             else if (!CurrentDisplay.Text.Split((char)Formulas.SplitSeparator())[1].Contains(","))
@@ -262,10 +259,18 @@ namespace WindowsFormsCalculator
 
         public void RecentDisplayUpdate()
         {
-            var localList = new Queue<string>(Output.RecentList);
+            Queue<string> localList = new Queue<string>(Output.RecentList);
+
+            RecentDisplay.Clear();
 
             while (localList.Count > 0)
                 RecentDisplay.Text += localList.Dequeue() + Environment.NewLine;
+        }
+
+        private void RecentDisplayEmpty(object sender, EventArgs e)
+        {
+            if (Output.RecentList.Count == 0)
+                RecentDisplay.Text = "No recent mathmatical events done";
         }
     }
 }
