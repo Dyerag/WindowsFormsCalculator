@@ -249,11 +249,10 @@ namespace WindowsFormsCalculator
                     _ = Output.Check();
                     CurrentDisplay.Text += ",";
                 }
-                
             }
             else if (!CurrentDisplay.Text.Split((char)Formulas.SplitSeparator())[1].Contains(","))
             {
-                if (int.TryParse(CurrentDisplay.Text[CurrentDisplay.Text.Length - 1].ToString(), out _))
+                if (!int.TryParse(CurrentDisplay.Text[CurrentDisplay.Text.Length - 1].ToString(), out _))
                     CurrentDisplay.Text += "0,";
                 else
                     CurrentDisplay.Text += ",";
